@@ -1,0 +1,33 @@
+global !p
+def countStringBuffer(string):
+  ocurrences = 0
+  for index in range(len(snip.buffer)):
+    ocurrences = ocurrences + snip.buffer[index].count(string)
+
+  return ocurrences
+endglobal
+
+snippet matTable
+<table mat-table [dataSource]="${1:dataSource}">
+</table>
+endsnippet
+
+snippet matColumn "Create Material Column"
+<ng-container matColumnDef="${1:column}">
+  <th mat-header-cell *matHeaderCellDef> ${3:Column description} </th>
+  <td mat-cell *matCellDef="let ${2:item}"> {{ $2.$1 }} </td>
+</ng-container>
+endsnippet
+
+snippet matRow "Create Material Row"
+<tr mat-header-row *matHeaderRowDef="${1:displayedColumns}"></tr>
+<tr mat-row *matRowDef="let row; columns: $1;"></tr>
+endsnippet
+
+snippet matNoDataRow
+<tr class="mat-row" *matNoDataRow>
+  <td class="mat-cell" colspan="${2:`!p snip.rv = str(countStringBuffer('matColumnDef'))`}">
+    ${1:No Data Text}
+  </td>
+</tr>
+endsnippet

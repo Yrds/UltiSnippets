@@ -1,0 +1,39 @@
+snippet rcc "Create React Component Class"
+import React, { Component } from 'react';
+
+class ${1:MyComponent} extends Component {
+	render(){
+		return (
+			<div className="$1">
+			</div>
+		)
+	}
+}
+
+export default $1;
+endsnippet
+
+snippet rfc "Create React Component Function"
+import React from 'react';
+
+const ${1:MyComponent} = () => {
+	return (
+		<div className="$1">
+		</div>
+	)
+}
+
+export default $1;
+endsnippet
+
+snippet state "Class component state"
+this.state.${1:myState}
+endsnippet
+
+snippet prop "Class component prop"
+this.prop.${1:myProp}
+endsnippet
+
+snippet bindfunc "Bind a function to this"
+this.${1:myFunction} = this.$1.bind(this);
+endsnippet

@@ -1,0 +1,39 @@
+snippet guard
+#ifndef $1_INCLUDED
+#define $1_INCLUDED
+
+$2
+
+#endif //$1_INCLUDED
+endsnippet
+
+snippet class
+class $1 {
+	$2
+};
+endsnippet
+
+snippet namespace "Create a namespace"
+namespace $1 {
+	$2
+}
+endsnippet
+
+snippet func "Create a function"
+$1 $2($3){
+	$4
+}
+endsnippet
+
+snippet clfunc "Create a class function"
+$1 $3::$2($4){
+	$5
+}
+endsnippet
+
+snippet maintest "Create gtest main function"
+int main(int argc, char **argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
+endsnippet

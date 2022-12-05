@@ -1,0 +1,19 @@
+global !p
+
+from datetime import date
+def getToday():
+	today = date.today()
+	return today.strftime("%Y %m %d")
+endglobal
+
+snippet today
+`!p snip.rv = getToday()`
+endsnippet
+
+snippet working_days
+w=mon | w=tue | w==wed | w=thu | w=fri
+endsnippet
+
+snippet every_day
+w=sun | w=mon | w=tue | w==wed | w=thu | w=fri | w=sat
+endsnippet
