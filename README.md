@@ -2,7 +2,7 @@
 
 This is my collectionn of UltiSnipps Snippets
 
-The official repository is located in 
+The official repository is located in my [github](https://github.com/Yrds/UltiSnippets)
 
 You can clone this entire repository to `~/.config/nvim/UltiSnips/` or pick files individually from github page.
 
