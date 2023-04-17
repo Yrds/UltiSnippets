@@ -37,3 +37,45 @@ int main(int argc, char **argv) {
 	return RUN_ALL_TESTS();
 }
 endsnippet
+
+snippet [] "Create a lambda function"
+[$1]($2) {$3}
+endsnippet
+
+snippet ESystem "Create EnTT ECS System"
+#ifndef ${1/.*/\U$0\E/g}_INCLUDED
+#define ${1/.*/\U$0\E/g}_INCLUDED
+
+#include "entt/entt.hpp"
+
+namespace $2 {
+	void ${1}System(entt::registry &registry);
+}
+
+#endif //$1_INCLUDED
+endsnippet
+
+snippet IESystem "Create eEnTT ECS System Implementation(.cpp)"
+#include "systems/$1.hpp"
+
+namespace $2 {
+	void ${1}System(entt::registry &registry) {
+		$3
+	}
+}
+
+endsnippet
+
+
+snippet EComponent "Create EnTT ECS Component"
+#ifndef ${1/.*/\U$0\E/g}_COMPONENT_INCLUDED
+#define ${1/.*/\U$0\E/g}_COMPONENT_INCLUDED
+
+#include "entt/entt.hpp"
+
+namespace $2 {
+	struct ${1}Component { $3 };
+}
+
+#endif //$1_INCLUDED
+endsnippet
